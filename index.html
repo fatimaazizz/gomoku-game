@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GoMoKu Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="intro-screen">
+    <h1 class="game-title">GoMoKu</h1>
+    <div class="name-prompt">
+      <input type="text" id="nameInput" placeholder="Enter your name (optional)" />
+      <button onclick="startGame()">Play</button>
+    </div>
+  </div>
+
+  <div id="game-container" style="display:none;">
+    <h1></h1>
+    <p id="playerLabel" style="text-align:center; font-weight:bold; margin-top:10px;"></p>
+    <h2 id="turnDisplay"></h2>
+    <div id="board"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
