@@ -1,0 +1,139 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom right, #6dd5ed, #2193b0);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#intro-screen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.game-title {
+  font-size: 4em;
+  margin-bottom: 30px;
+  animation: popIn 1s ease-in-out;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.name-prompt {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+#nameInput {
+  padding: 12px 20px;
+  font-size: 18px;
+  width: 300px;
+  border-radius: 6px;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 18px;
+  border-radius: 6px;
+  background-color: #ff9800;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #fb8c00;
+}
+
+#game-container {
+  padding: 20px;
+  text-align: center;
+}
+
+h1, h2 {
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+#board {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(10, 40px);
+  grid-template-rows: repeat(10, 40px);
+  gap: 2px;
+  justify-content: center;
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+  background: url("background.gif");
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-size: cover;
+}
+
+.black {
+  background-image: url("blackStone.gif");
+}
+
+.white {
+  background-image: url("whiteStone.gif");
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.dot-flashing {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 16px;
+  text-align: center;
+}
+
+.dot-flashing::before, .dot-flashing::after, .dot-flashing div {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin: 0 4px;
+  border-radius: 50%;
+  background-color: white;
+  animation: dotFlashing 1s infinite ease-in-out both;
+}
+
+.dot-flashing::before {
+  animation-delay: 0s;
+}
+.dot-flashing div {
+  animation-delay: 0.2s;
+}
+.dot-flashing::after {
+  animation-delay: 0.4s;
+}
+
+@keyframes dotFlashing {
+  0% { opacity: 0.2; }
+  50%,
+  100% { opacity: 1; }
+}
